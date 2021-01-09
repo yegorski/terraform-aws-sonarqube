@@ -24,7 +24,7 @@ To create the server, you'll first need to create your own SonarQube AMI. You ca
 
 ```terraform
 module "sonarqube" {
-  source = "git::https://github.com/yegorski/terraform-aws-sonarqube?ref=master"
+  source = "git::https://github.com/yegorski/terraform-aws-sonarqube.git"
 
   region = "us-east-1"
 
@@ -72,6 +72,16 @@ module "sonarqube" {
 | ----------- | ---------------------------------------------------------------------------------------------------- |
 | lb_dns_name | Load balancer URL.                                                                                   |
 | lb_zone_id  | Load balancer DNS zone ID. Can be used to create a friedly DNS record to point to the load balancer. |
+
+## Testing
+
+The Terraform in this project is tested with [Terratest][]. Terratest is used to:
+
+1. Deploy the module
+1. Validate that SonarQube is responding by querying the ALB
+1. Tear down the resources
+
+See `test/packer_sonarqube_test.go`.
 
 [ec2 with autoscaling and load balancing terraform module]: https://github.com/yegorski/terraform-aws-autoscaling-e2
 [sonarqube]: https://www.sonarqube.org/

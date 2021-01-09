@@ -1,5 +1,5 @@
 module "autoscaling_ec2" {
-  source = "git::https://github.com/yegorski/terraform-aws-autoscaling-e2.git?ref=master"
+  source = "git::https://github.com/yegorski/terraform-aws-autoscaling-e2.git"
 
   region = "${var.region}"
 
