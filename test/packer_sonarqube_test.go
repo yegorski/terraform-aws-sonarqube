@@ -70,6 +70,7 @@ func validateServerIsRunning(t *testing.T, terraformOptions *terraform.Options) 
 	http_helper.HttpGetWithRetryWithCustomValidation(
 		t,
 		url,
+		// Add TLS config, it's required since https://github.com/gruntwork-io/terratest/pull/386
 		&tls.Config{
 			InsecureSkipVerify: true,
 		},

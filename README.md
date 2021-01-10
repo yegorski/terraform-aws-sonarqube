@@ -13,6 +13,8 @@ The AMI that has the SonarQube server pre-installed was used. It was created usi
 1. MySQL 5.7
 1. SonarQube 7.4
 
+![sonarqube](./files/sonarqube.png)
+
 ## Features
 
 1. The server is recreated in the event that it is terminated.
